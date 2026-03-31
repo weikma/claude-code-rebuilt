@@ -29,7 +29,7 @@
 
 ## Background
 
-On March 31, 2026, the full source code of Anthropic's Claude Code was [leaked via a source map file](https://x.com/AiBreakfast/status/1906632204466995584) exposed in their npm registry. The leak contained only the `src/` directory -- no build configuration, no dependency manifests, no type definitions for core modules, and no way to compile or run it.
+On March 31, 2026, the full source code of Anthropic's Claude Code was leaked via a source map file exposed in their npm registry. [The leaked source code](https://github.com/instructkr/claw-code) contained only the `src/` directory -- no build configuration, no dependency manifests, no type definitions for core modules, and no way to compile or run it.
 
 This project reconstructs everything that was missing: `package.json`, `tsconfig.json`, build scripts, 185+ stub/type files, compatibility shims for internal-only packages, and a `bun:bundle` feature-flag runtime. The result is a complete, buildable, and runnable Claude Code terminal application. Internal-only Anthropic features (daemon workers, voice mode, computer-use, etc.) are disabled at build time via feature flags; the core interactive REPL, tool system, and Anthropic API integration remain fully functional.
 
